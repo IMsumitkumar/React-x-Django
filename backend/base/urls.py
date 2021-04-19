@@ -1,8 +1,16 @@
 from django.urls import path
-from .views import getRoutes, getProducts, getProduct
+from . import views
+from .views import MyTokenObtainPairView
 
 urlpatterns = [
-    path('', getRoutes, name='routes'),
-    path('products/', getProducts, name='products'),
-    path('products/<str:pk>', getProduct, name='product')
+    path('users/login/', views.MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+
+    path('', views.getRoutes, name='routes'),
+
+    path('users/register/', views.registerUser, name='user-register'),
+    path('users/profile/', views.getUserProfile, name='users-profile'),
+    path('users/', views.getUsers, name='users'),
+    path('products/', views.getProducts, name='products'),
+    path('products/<str:pk>', views.getProduct, name='product')
 ]
+
