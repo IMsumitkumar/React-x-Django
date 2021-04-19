@@ -9,24 +9,15 @@ import Loader from '../components/Loader'
 import Message from '../components/Message'
 
 function HomeScreen() {
-    // const [products, setProducts] = useState([])
     const dispatch = useDispatch()
     const productList = useSelector(state => state.productList)  // store.productList from store reducer
     const { error, loading, products } = productList
 
 
     useEffect(()=>{
-        // async function fetchProducts(){
-        //     const { data } = await axios.get('/api/products/')
-        //     setProducts(data)
-        // }
 
-        // fetchProducts()
-
-        
-        // eslint-disable-next-line
         dispatch(listProducts())
-    }, [])
+    }, [dispatch])
 
     return (
         <div>
