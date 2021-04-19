@@ -15,7 +15,7 @@ function App() {
           <Route path='/' component={HomeScreen} exact />
           {/* <HomeScreen /> with out router  */} 
           <Route path='/product/:id' component={ProductScreen} exact />
-          <Route path='/card/:id?' component={CartScreen} />    {/* // ? make id optional */}
+          <Route path='/cart/:id?' component={CartScreen} />    {/* // ? make id optional */}
           
           
         </Container>
